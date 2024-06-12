@@ -1,0 +1,75 @@
+﻿@model bookdto
+@{
+}
+<div class="row">
+    
+    <h2 class="text-center mb-5">EDIT PRODUCT</h2>
+    <form method="post" enctype="multipart/forn-data">
+        <div class="row mb-3">
+            <div class="row mb-3">
+
+                <label class="col-sm-4 col-form-label">Id</label>
+
+                <div class=" col-sm-8">
+                    <input class="form-control-plaintext" readonly value="@ViewData["bookId"]" />
+                    <span asp-validation-for="cname" class="text-danger"></span>
+                </div>
+            </div>
+
+            <label class="col-sm-4 col-form-label">Name</label>
+
+            <div class=" col-sm-8">
+                <input class="form-control" asp-for="cname">
+                <span asp-validation-for="cname" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+
+            <label class="col-sm-4 col-form-label">Destination</label>
+
+            <div class=" col-sm-8">
+                <input class="form-control" asp-for="cdestination">
+                <span asp-validation-for="cdestination" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+
+            <label class="col-sm-4 col-form-label">No. of Adult</label>
+
+            <div class=" col-sm-8">
+                <input class="form-control" asp-for="cadult">
+                <span asp-validation-for="cadult" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+
+            <label class="col-sm-4 col-form-label">No. of Child</label>
+
+            <div class=" col-sm-8">
+                <input class="form-control" asp-for="cchild">
+                <span asp-validation-for="cchild" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-3">
+
+            <label class="col-sm-4 col-form-label">No. of Days</label>
+
+            <div class=" col-sm-8">
+                <input class="form-control" asp-for="cstay">
+                <span asp-validation-for="cstay" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="offset-sm-4 col-sm-4 d-grid">
+                <button class="btn btn primary " type="submit">SUBMIT</button>
+            </div>
+            <div class="offset-sm-4 col-sm-4 d-grid">
+                <a class="btn btn-outline-primary " asp-controller="book" asp-action="Book" role="button">CANCEL</a>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+

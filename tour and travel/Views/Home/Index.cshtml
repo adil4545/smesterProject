@@ -1,0 +1,126 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <br />
+
+    <section id="home" class="home">
+        <div id="ho">
+            <h3 id="H2">ADVANTURE WORLDWIDE</h3>
+            <p id="p">DISCOVER THE WORLD</p>
+            <a href="#" class="btn">Discover more</a>
+        </div>
+        <div class="control">
+            <span class="video-btn active" data-src="/css/1st.mp4.mp4"></span>
+            <span class="video-btn " data-src="/css/2nd.mp4.mp4"></span>
+
+            <span class="video-btn " data-src="/css/3rd.mp4.mp4"></span>
+            <span class="video-btn " data-src="/css/4th.mp4.mp4"></span>
+
+        </div>
+        <div class="video-container">
+            <video src="/css/1st.mp4.mp4 " id="video-sli" loop autoplay muted></video>
+
+
+        </div>
+
+    </section>
+
+
+
+
+    <style>
+        section {
+            padding: 3rem,9%;
+        }
+
+        .home {
+            display: flex;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column;
+            position: relative;
+            z-index: 0;
+        }
+
+            .home #ho {
+                text-align: center;
+            }
+
+                .home #ho #H2 {
+                    font-size: 40px;
+                    color: aqua;
+                    text-transform: uppercase;
+                    text-shadow: 0.3rem .5rem rgb(rgb(73, 55, 55));
+                }
+
+                .home #ho #p {
+                    font-size: 25px;
+                    color: rgb(22, 29, 29);
+                    text-transform: uppercase;
+                    text-shadow: 0.3Rem .5rem rgb(rgb(73, 55, 55));
+                }
+
+        .btn {
+            text-decoration: none;
+            background-color: rgb(177, 129, 41);
+            color: green;
+            font-size: 30px;
+        }
+
+        .home .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .home .control .video-btn {
+            height: 2rem;
+            width: 2rem;
+            display: inline-block;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            margin: 0.5rem;
+            margin-top: 1rem;
+        }
+
+            .home .control .video-btn.active {
+                background: orange;
+            }
+    </style>
+    <script>
+        let video = document.querySelectorAll('.video-btn');
+
+        video.forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelector('.control .active').classList.remove('active');
+                btn.classList.add('active')
+                let src = btn.getAttribute('data-src');
+                document.querySelector('#video-sli').src = src;
+
+            })
+
+        });
+    </script>
+
+
+</body>
+</html>

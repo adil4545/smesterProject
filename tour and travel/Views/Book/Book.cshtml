@@ -1,0 +1,58 @@
+﻿@model List<book>
+@{
+}
+<h2 class="text-center mb-5">LIST OF BOOKING</h2>
+<div class="row mb-5">
+    <div class="col">
+        <a class="btn btn-primary" asp-controller="book" asp-action="Create">NEW CUSTOMER</a>
+    </div>
+    <div class="col">
+
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+             <th>
+              NAME
+            </th>
+            <th>
+               DESTINATION
+            </th>
+            <th>
+                NO. OF ADULT
+            </th>
+            <th>
+                NO. OF CHILD
+            </th>
+            <th>
+                NO. OF DAYS
+            </th>
+            <br />
+            <th>
+               ACTIONS
+            </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var dt in Model)
+        {
+            <tr>
+                <td>@dt.Id</td>
+                <td>@dt.cname</td>
+                <td>@dt.cdestination</td>
+                <td>@dt.cchild</td>
+                <td>@dt.cstay</td>
+                <td>6</td>
+            <td style="white-space:nowrap">
+                    <a class="btn btn-primary btn-sm" asp-controller="book" asp-action="Edit" asp-route-id="@dt.Id">EDIT</a>
+                    <a class="btn btn-Danger btn-sm" asp-controller="book" asp-action="Delete" asp-route-id="@dt.Id" onclick="return confirm ('Are u Sure??')">   DELETE</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
